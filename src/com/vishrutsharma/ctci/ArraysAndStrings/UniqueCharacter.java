@@ -12,13 +12,12 @@ public class UniqueCharacter {
         char[] character = s.toCharArray();
 
         for (char c : character) {
-            if (c >= 'a' && c <= 'z') {
-                count[c]++;
-                if (count[c] > 1) {
-                    System.out.println("false");
-                    return false;
-                }
+            count[c]++;
+            if (count[c] > 1) {
+                System.out.println("false");
+                return false;
             }
+
         }
 
         System.out.println("true");
