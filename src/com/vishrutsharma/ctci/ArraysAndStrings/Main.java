@@ -1,5 +1,7 @@
 package com.vishrutsharma.ctci.ArraysAndStrings;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,11 +33,30 @@ public class Main {
 //                q5.oneEditAway("pale", "ble");
 
 //========================CountCompression===========================================
-                CountCompression q6 = new CountCompression();
-                q6.compression("aabbbbooooyyrrshkkee");
-                q6.compression("qwertyuiop");
+//                CountCompression q6 = new CountCompression();
+//                q6.compression("aabbbbooooyyrrshkkee");
+//                q6.compression("qwertyuiop");
 
+//=============================RotateMatrix=========================================
+//                    int[][] A = {{1,2,3},{4,5,6},{7,8,9}};
+//
+//                    RotateMatrix q7 = new RotateMatrix();
+//                    q7.rotateMatrix(A);
+//                    for (int[] row : A){
+//                        System.out.println(Arrays.toString(row));
+//                    }
+//==============================ZeroMatrix======================================
+//                    int[][] A = {{1,0,3},{4,5,6},{7,8,9}};
+//
+//                    ZeroMatrix q8 = new ZeroMatrix();
+//                    q8.setZeros(A);
+//                    for (int[] row : A){
+//                        System.out.println(Arrays.toString(row));
+//                    }
 
+//================================StringRotation=====================================
+                     StringRotation q9 = new StringRotation();
+                     q9.isRotation("bottle", "ttlebo");
 
     }
 }
