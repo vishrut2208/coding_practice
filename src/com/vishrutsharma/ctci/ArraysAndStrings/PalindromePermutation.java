@@ -19,18 +19,8 @@ public class PalindromePermutation {
                 countodd--;
             }
         }
-        if(A.length() %2 ==0){
-            if(countodd %2 ==0){
-                System.out.println("true");
-                return true;
-            }
-        }else{
-            if(countodd == 1){
-                System.out.println("true");
-                return true;
-            }
-        }
-        System.out.println(false);
-        return false;
+
+        System.out.println(countodd<=1);
+        return countodd<=1;
     }
 }

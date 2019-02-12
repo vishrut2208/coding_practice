@@ -20,8 +20,21 @@ public class Main {
 //          q3.urlify("Mr John Smith    ", 13);
 
 //======================PalindromePermutation================================
-            PalindromePermutation q4 = new PalindromePermutation();
-            q4.palindromePermutation("taco cat");
+//            PalindromePermutation q4 = new PalindromePermutation();
+//            q4.palindromePermutation("taceocat");
+
+//=======================OneEditAway===========================================
+//                OneEditAway q5 = new OneEditAway();
+//                q5.oneEditAway("pale", "bale");
+//                q5.oneEditAway("pale", "ale");
+//                q5.oneEditAway("ale", "pale");
+//                q5.oneEditAway("pale", "ble");
+
+//========================CountCompression===========================================
+                CountCompression q6 = new CountCompression();
+                q6.compression("aabbbbooooyyrrshkkee");
+                q6.compression("qwertyuiop");
+
 
 
     }
