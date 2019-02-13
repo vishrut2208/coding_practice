@@ -1,8 +1,6 @@
 package com.vishrutsharma.leetcode.easy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class TargetSum {
 
@@ -13,17 +11,17 @@ public class TargetSum {
             return 0;
         }
 
-        HashMap<Integer, Integer> s = new HashMap<>();
+        HashSet<Integer> s = new HashSet<>();
         int count = 0;
         ArrayList<String> ans = new ArrayList<>();
 
         for (int i = 0; i < A.length; i++) {
-            if (s.containsKey(T - A[i])) {
+            if (s.contains(T - A[i])) {
                 count++;
                 ans.add(T - A[i] + ", " + A[i]);
 
             } else {
-                s.put(A[i], i);
+                s.add(A[i]);
             }
         }
 
@@ -31,29 +29,42 @@ public class TargetSum {
         return count;
     }
 
-    public static String nearestPair(int[] A, int T) {
-        if (NoOfPairs(A, T) == 0) {
-            Arrays.sort(A);
-            int min = Integer.MAX_VALUE;
-            ArrayList<String> ans = new ArrayList();
+    public static ArrayList<String> nearestPair(int[] A, int T){
+        Arrays.sort(A);
+        int i =0;
+        int j = A.length-1;
+        String minpair;
+        int min = Integer.MAX_VALUE;
+        ArrayList<String> ans = new ArrayList<>();
 
-            for (int i = 0; i < A.length - 1; i++) {
-                int temp = A[i] + A[i + 1];
+        while(i<j){
+            int temp = A[i] + A[j];
 
-                int diff = Math.abs(T - temp);
+            if( temp == T){
+                ans.add(A[i]+ ", " + A[j]);
+            }else if(temp > T){
+                if(Math.abs(T - temp) < min ){
+                    min = Math.abs(T - temp);
+                    if(ans.size()>1){
+                    ans.remove(0);}
+                    ans.add(0,A[i]+ ", " + A[j]);}
 
+                j--;
+            }else{
+                if(Math.abs(T - temp) < min ){
+                    min = Math.abs(T - temp);
+                    if(ans.size()>1){
+                        ans.remove(0);}
+                        ans.add(0,A[i]+ ", " + A[j]);}
 
-                min = Math.min(min, diff);
-
-                if (min == diff) {
-                    ans.add(0, A[i] + ", " + A[i + 1]);
-                }
+                i++;
             }
-            System.out.println(ans.get(0));
-            return ans.get(0);
-        }
-        return null;
 
+        }
+        for(String s : ans){
+            System.out.println(s);
+        }
+        return ans;
     }
 
 
