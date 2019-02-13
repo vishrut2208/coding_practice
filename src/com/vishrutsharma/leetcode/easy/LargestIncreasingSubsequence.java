@@ -41,6 +41,7 @@ public class LargestIncreasingSubsequence {
             if (len == i) {
                 len++;
             }
+            System.out.println(Arrays.toString(dp)+" "+ i);
         }
         System.out.println(len);
         return len;

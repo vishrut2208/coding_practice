@@ -14,18 +14,38 @@ public class Main {
 //        //y.NoOfPairs(B, 10);
 //        y.nearestPair(B, 1);
 
-//        int[] c = {10,9,2,5,3,7,101,18};
-//
+//       int[] c = {1,6,7,4,2};
+////
 //        LargestIncreasingSubsequence s = new LargestIncreasingSubsequence();
 //
 //        s.largestIncreasingSubsequence(c);
 //        s.linssBinarySearch(c);
 
+//
+//            int[] sum = {8,1,1,14,4,4,2,3,1,9,3,4};
+//
+//            Target_3_Sum s = new Target_3_Sum();
+//            s.threeSumCount(sum, 10);
 
-            int[] sum = {8,1,1,14,4,4,2,3,1,9,3,4};
+              Graph g = new Graph(9);
+                g.addEdge(g, 1,3);
+                g.addEdge(g, 3,8);
+                g.addEdge(g, 8,9);
+                g.addEdge(g, 4,7);
+                g.addEdge(g, 7,6);
+                //g.addEdge(g, 2,7);
+                g.addEdge(g, 2,5);
+                g.addEdge(g,1,2);
+                g.addEdge(g, 2,4);
+//
+//
+                g.BFS(g,1);
 
-            Target_3_Sum s = new Target_3_Sum();
-            s.threeSumCount(sum, 10);
+
+//        int[][] l = {{1,1,1,0},{0,0,0,0},{0,0,1,0},{1,0,0,0},{1,1,0,1}};
+//        findIsland i = new findIsland();
+//        i.islands(l);
+
 
     }
 }
