@@ -50,10 +50,30 @@ public class Main {
 //        BullsAndCows b = new BullsAndCows();
 //        b.getHint("11122211", "22122210");
 
-        CorrectAString s = new CorrectAString();
+//        CorrectAString s = new CorrectAString();
+//
+//        s.correctString("iamvishrut");
 
-        s.correctString("iamvishrut");
 
+        BinaryTree bt = new BinaryTree();
+
+        bt.addNode(20);
+        bt.addNode(10);
+        bt.addNode(30);
+        bt.addNode(5);
+        bt.addNode(7);
+        bt.addNode(31);
+        bt.addNode(29);
+        bt.addNode(13);
+        bt.addNode(12);
+        bt.inorderTraversalRecursive(bt.getRoot());
+
+        //bt.findMaximum(10);
+        //bt.findMinimum(10);
+        System.out.println("===============================");
+        bt.deleteNode(10);
+
+        bt.inorderTraversalRecursive(bt.getRoot());
 
     }
 }
