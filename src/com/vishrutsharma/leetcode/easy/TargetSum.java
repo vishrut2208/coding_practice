@@ -33,7 +33,7 @@ public class TargetSum {
         Arrays.sort(A);
         int i =0;
         int j = A.length-1;
-        String minpair;
+        //String minpair;
         int min = Integer.MAX_VALUE;
         ArrayList<String> ans = new ArrayList<>();
 

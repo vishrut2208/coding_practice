@@ -27,24 +27,32 @@ public class Main {
 //            Target_3_Sum s = new Target_3_Sum();
 //            s.threeSumCount(sum, 10);
 
-              Graph g = new Graph(9);
-                g.addEdge(g, 1,3);
-                g.addEdge(g, 3,8);
-                g.addEdge(g, 8,9);
-                g.addEdge(g, 4,7);
-                g.addEdge(g, 7,6);
-                //g.addEdge(g, 2,7);
-                g.addEdge(g, 2,5);
-                g.addEdge(g,1,2);
-                g.addEdge(g, 2,4);
-//
-//
-                g.BFS(g,1);
+//              Graph g = new Graph(9);
+//                g.addEdge(g, 1,3);
+//                g.addEdge(g, 3,8);
+//                g.addEdge(g, 8,9);
+//                g.addEdge(g, 4,7);
+//                g.addEdge(g, 7,6);
+//                //g.addEdge(g, 2,7);
+//                g.addEdge(g, 2,5);
+//                g.addEdge(g,1,2);
+//                g.addEdge(g, 2,4);
+////
+////
+//                g.BFS(g,1);
 
 
 //        int[][] l = {{1,1,1,0},{0,0,0,0},{0,0,1,0},{1,0,0,0},{1,1,0,1}};
 //        findIsland i = new findIsland();
 //        i.islands(l);
+//
+//
+//        BullsAndCows b = new BullsAndCows();
+//        b.getHint("11122211", "22122210");
+
+        CorrectAString s = new CorrectAString();
+
+        s.correctString("iamvishrut");
 
 
     }
