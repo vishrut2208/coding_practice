@@ -3,6 +3,7 @@ package com.vishrutsharma.leetcode.easy;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Graph {
 
@@ -61,6 +62,29 @@ public class Graph {
         }
         return ans;
     }
+//
+//    public int[] DFS (Graph g, int src){
+//        int i=0;
+//        int[] ans = new int[g.vertexcount +1];
+//        boolean[] visited = new boolean[g.vertexcount +1];
+//
+//        Stack<Integer> s = new Stack<>();
+//        s.push(src);
+//        visited[src] = true;
+//
+//        while(!s.isEmpty()){
+//            int temp = s.pop();
+//
+//            ans[i] = temp;
+//
+//            s.push(g.adjList.get(temp).get(i));
+//
+//
+//        }
+//
+//
+//
+//    }
 
 
 

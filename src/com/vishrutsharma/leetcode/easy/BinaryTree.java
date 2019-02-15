@@ -1,10 +1,12 @@
 package com.vishrutsharma.leetcode.easy;
 
-import sun.reflect.generics.tree.Tree;
+
+import java.util.Stack;
 
 public class BinaryTree {
 
     TreeNode root;
+    int diameter =0;
 
     public BinaryTree(){
     }
@@ -99,6 +101,69 @@ public class BinaryTree {
         inorderTraversalRecursive(node.getLeft());
         System.out.println(node.val);
         inorderTraversalRecursive(node.getRight());
+    }
+
+    public void inorderTraversalIterative(TreeNode node){
+        if(getRoot() == null){
+            return;
+        }
+
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode curr = getRoot();
+        while(curr != null || s.size()>0){
+            while(curr != null){
+                s.push(curr);
+                //System.out.println(curr.getVal());
+                curr = curr.getLeft();
+            }
+
+            curr = s.pop();
+            System.out.println(curr.getVal());
+            curr = curr.getRight();
+        }
+    }
+
+    public void preorderTraversalRecursive(TreeNode node){
+        if(node == null){
+            return;
+        }
+        System.out.println(node.val);
+        preorderTraversalRecursive(node.getLeft());
+        preorderTraversalRecursive(node.getRight());
+    }
+
+    public void preorderTraversalIterative(TreeNode node){
+        if(getRoot() == null){
+            return;
+        }
+
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode curr = getRoot();
+        while(curr != null || s.size()>0){
+            while(curr != null){
+                s.push(curr);
+                System.out.println(curr.getVal());
+                curr = curr.getLeft();
+            }
+
+            curr = s.pop();
+            //System.out.println(curr.getVal());
+            curr = curr.getRight();
+        }
+    }
+
+    public void postorderTraversalRecursive(TreeNode node){
+        if(node == null){
+            return;
+        }
+
+        postorderTraversalRecursive(node.getLeft());
+        postorderTraversalRecursive(node.getRight());
+        System.out.println(node.val);
+    }
+
+    public void postorderTraversalIterative(TreeNode node){
+
 
     }
 
@@ -140,7 +205,7 @@ public class BinaryTree {
                     actualP = pointer;
                     pointer = pointer.getRight();
                 }
-                System.out.println(actualP.getVal());
+                //System.out.println(actualP.getVal());
                 return actualP;
             }
         }
@@ -164,7 +229,7 @@ public class BinaryTree {
                     actualP = pointer;
                     pointer = pointer.getLeft();
                 }
-                System.out.println(actualP.getVal());
+                //System.out.println(actualP.getVal());
                 return actualP;
             }
         }
@@ -180,16 +245,19 @@ public class BinaryTree {
     public boolean deleteNode(TreeNode node){
 
         TreeNode toBeDeleted = find(node);
-
         TreeNode replaceWith1 = findMinimum(toBeDeleted);
 
         if(replaceWith1.getVal() == toBeDeleted.getLeft().getVal()){
             replaceWith1.setRight(toBeDeleted.getRight());
+            replaceWith1.setParent(toBeDeleted.getParent());
             if(toBeDeleted.parent.getRight().equals(toBeDeleted)){
                 toBeDeleted.parent.setRight(replaceWith1);
             }else{
                 toBeDeleted.parent.setLeft(replaceWith1);
             }
+            toBeDeleted.setLeft(null);
+            toBeDeleted.setRight(null);
+            toBeDeleted.setParent(null);
         }else{
             if(replaceWith1.parent.getRight().equals(replaceWith1)){
                 replaceWith1.parent.setRight(null);
@@ -215,6 +283,60 @@ public class BinaryTree {
         TreeNode cur = find(new TreeNode(val));
         return deleteNode(cur);
     }
+
+    public int height(int val){
+        TreeNode curr = find(new TreeNode(val));
+        return height(curr);
+    }
+
+    public int height( TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        int left = height(node.getLeft());
+        int right = height(node.getRight());
+        this.diameter = Math.max(1+ left + right, diameter);
+        return 1+ Math.max(left, right);
+
+    }
+
+    public int depth(int val){
+        TreeNode curr = find(new TreeNode(val));
+        return depth(curr);
+    }
+
+    public int depth(TreeNode node){
+        int depthcount=0;
+        if(getRoot() == null){
+            return 0;
+        }
+        TreeNode current = getRoot();
+        TreeNode prev = null;
+        while(current !=null){
+            prev = current;
+            if(current.getVal() == node.val){
+                return depthcount;
+            }else if(current.getVal() >= node.val){
+                depthcount++;
+                current = current.getLeft();
+            }else{
+                depthcount++;
+                current = current.getRight();
+            }
+        }
+        return depthcount;
+    }
+
+    public int diameter(TreeNode node){
+        height(node);
+        return this.diameter;
+    }
+
+
+
+
+
+
 
 
 }

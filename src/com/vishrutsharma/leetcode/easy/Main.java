@@ -54,26 +54,59 @@ public class Main {
 //
 //        s.correctString("iamvishrut");
 
+//
+//        BinaryTree bt = new BinaryTree();
+//
+//        bt.addNode(20);
+//        bt.addNode(10);
+//        bt.addNode(30);
+//        bt.addNode(5);
+//        bt.addNode(7);
+//        bt.addNode(31);
+//        bt.addNode(29);
+//        bt.addNode(13);
+//        bt.addNode(12);
+//        //System.out.println("===============================");
+//        //bt.inorderTraversalRecursive(bt.getRoot());
+//
+//        //bt.findMaximum(10);
+//        //bt.findMinimum(10);
+//        System.out.println("===============================");
+//        //bt.deleteNode(10);
+//        //System.out.println("========================inorder=====================");
+//        //bt.inorderTraversalRecursive(bt.getRoot());
+//        //System.out.println("========================preorder=====================");
+//        //bt.preorderTraversalRecursive(bt.getRoot());
+//        System.out.println("========================postorder=====================");
+//        bt.postorderTraversalRecursive(bt.getRoot());
+//
+//        System.out.println("===============Height of the root node=======================");
+//        System.out.println(bt.height(bt.getRoot()));
+//        System.out.println("===============Height of the node 10=======================");
+//        System.out.println(bt.height(10));
+//        System.out.println("=============Depth of the root node=============================");
+//        System.out.println(bt.depth(bt.getRoot()));
+//        System.out.println("=============Depth of the node 10=============================");
+//        System.out.println(bt.depth(5));
+//        System.out.println("Diameter of the tree==============================================");
+//        System.out.println(bt.diameter(bt.getRoot()));
+//       // System.out.println(bt.diameter);
 
-        BinaryTree bt = new BinaryTree();
+        //System.out.println("========================inorder iterative=====================");
+       // bt.postorderTraversalIterative(bt.getRoot());
 
-        bt.addNode(20);
-        bt.addNode(10);
-        bt.addNode(30);
-        bt.addNode(5);
-        bt.addNode(7);
-        bt.addNode(31);
-        bt.addNode(29);
-        bt.addNode(13);
-        bt.addNode(12);
-        bt.inorderTraversalRecursive(bt.getRoot());
 
-        //bt.findMaximum(10);
-        //bt.findMinimum(10);
-        System.out.println("===============================");
-        bt.deleteNode(10);
 
-        bt.inorderTraversalRecursive(bt.getRoot());
+//
+//        AlienDictionary a = new AlienDictionary();
+//
+//        String[] words = {"wrt", "wrf", "ett", "rftt"};
+//
+//        a.alienDictionary(words);
+
+        PartitionLabels p = new PartitionLabels();
+        p.partitionLabels("ababcbacadefegdehijhklij");
+
 
     }
 }
