@@ -55,22 +55,36 @@ public class Main {
 //        s.correctString("iamvishrut");
 
 //
-//        BinaryTree bt = new BinaryTree();
+        BinaryTree bt = new BinaryTree();
+
+        bt.addNode(20);
+        bt.addNode(10);
+        bt.addNode(30);
+        bt.addNode(5);
+        bt.addNode(7);
+        bt.addNode(6);
+       // bt.addNode(8);
+        bt.addNode(31);
+        bt.addNode(29);
+        bt.addNode(13);
+        //bt.addNode(15);
+        bt.addNode(12);
+        System.out.println("========================inorder=====================");
+        bt.inorderTraversalRecursive(bt.getRoot());
+
+        bt.deleteNode(20);
+
+        System.out.println("========================inorder=====================");
+        bt.inorderTraversalRecursive(bt.getRoot());
+
+
+        //bt.printLeafs(bt.getRoot());
+        //bt.findLeaves(bt.getRoot());
+        //System.out.println("===============================");
+        //bt.inorderTraversalRecursive(bt.getRoot());
 //
-//        bt.addNode(20);
-//        bt.addNode(10);
-//        bt.addNode(30);
-//        bt.addNode(5);
-//        bt.addNode(7);
-//        bt.addNode(31);
-//        bt.addNode(29);
-//        bt.addNode(13);
-//        bt.addNode(12);
-//        //System.out.println("===============================");
-//        //bt.inorderTraversalRecursive(bt.getRoot());
-//
-//        //bt.findMaximum(10);
-//        //bt.findMinimum(10);
+//        //bt.successor(10);
+//        //bt.predecessor(10);
 //        System.out.println("===============================");
 //        //bt.deleteNode(10);
 //        //System.out.println("========================inorder=====================");
@@ -104,8 +118,8 @@ public class Main {
 //
 //        a.alienDictionary(words);
 
-        PartitionLabels p = new PartitionLabels();
-        p.partitionLabels("ababcbacadefegdehijhklij");
+//        PartitionLabels p = new PartitionLabels();
+//        p.partitionLabels("ababcbacadefegdehijhklij");
 
 
     }

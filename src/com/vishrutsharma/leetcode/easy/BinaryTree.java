@@ -1,6 +1,10 @@
 package com.vishrutsharma.leetcode.easy;
 
 
+import sun.reflect.generics.tree.Tree;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class BinaryTree {
@@ -72,6 +76,8 @@ public class BinaryTree {
         }
     }
 
+// Adding element to the binary tree
+
     public boolean addNode(TreeNode newNode){
         TreeNode current = root;
         if(current == null){
@@ -102,6 +108,10 @@ public class BinaryTree {
         System.out.println(node.val);
         inorderTraversalRecursive(node.getRight());
     }
+
+
+    // All traversals
+
 
     public void inorderTraversalIterative(TreeNode node){
         if(getRoot() == null){
@@ -167,6 +177,8 @@ public class BinaryTree {
 
     }
 
+    // function to Find a node
+
     public TreeNode find(TreeNode node){
         if(getRoot() == null){
             return null;
@@ -193,7 +205,9 @@ public class BinaryTree {
         return false;
     }
 
-    public TreeNode findMinimum(TreeNode node){
+    // function to find the predecessor
+
+    public TreeNode predecessor(TreeNode node){
         if(node.getLeft() != null){
             TreeNode pointer = node.getLeft();
             if(pointer.getRight() == null){
@@ -212,12 +226,14 @@ public class BinaryTree {
         return null;
     }
 
-    public TreeNode findMinimum(int val){
+    public TreeNode predecessor(int val){
         TreeNode cur = find(new TreeNode(val));
-        return findMinimum(cur);
+        return predecessor(cur);
     }
 
-    public TreeNode findMaximum(TreeNode node){
+    // function to find successor
+
+    public TreeNode successor(TreeNode node){
         if(node.getRight() != null){
             TreeNode pointer = node.getRight();
             if(pointer.getLeft() == null){
@@ -236,47 +252,128 @@ public class BinaryTree {
         return null;
     }
 
-    public TreeNode findMaximum(int val){
+    public TreeNode successor(int val){
         TreeNode cur = find(new TreeNode(val));
-        return findMaximum(cur);
+        return successor(cur);
     }
 
 
+    //function to delete a node
+
     public boolean deleteNode(TreeNode node){
-
-        TreeNode toBeDeleted = find(node);
-        TreeNode replaceWith1 = findMinimum(toBeDeleted);
-
-        if(replaceWith1.getVal() == toBeDeleted.getLeft().getVal()){
-            replaceWith1.setRight(toBeDeleted.getRight());
-            replaceWith1.setParent(toBeDeleted.getParent());
-            if(toBeDeleted.parent.getRight().equals(toBeDeleted)){
-                toBeDeleted.parent.setRight(replaceWith1);
-            }else{
-                toBeDeleted.parent.setLeft(replaceWith1);
-            }
-            toBeDeleted.setLeft(null);
-            toBeDeleted.setRight(null);
-            toBeDeleted.setParent(null);
-        }else{
-            if(replaceWith1.parent.getRight().equals(replaceWith1)){
-                replaceWith1.parent.setRight(null);
-            }else{
-                replaceWith1.parent.setLeft(null);
-            }
-            replaceWith1.setLeft(toBeDeleted.left);
-            replaceWith1.setRight(toBeDeleted.right);
-
-            replaceWith1.setParent(toBeDeleted.parent);
-            if(toBeDeleted.parent.getRight().equals(toBeDeleted)){
-                toBeDeleted.parent.setRight(replaceWith1);
-            }else{
-                toBeDeleted.parent.setLeft(replaceWith1);
-            }
+        if(getRoot() ==null){
+            return false;
         }
 
-        return true;
+        TreeNode toBeDeleted = find(node);
 
+        if(toBeDeleted.getVal() == node.getVal()) {
+            TreeNode replaceWith1 = predecessor(toBeDeleted);
+
+            if(replaceWith1 != null) {
+
+                if(toBeDeleted.getRight() ==null && toBeDeleted.getLeft() == null){
+                    if (toBeDeleted.parent.getRight()!= null) {
+                        if (toBeDeleted.parent.getRight().equals(toBeDeleted)) {
+                            toBeDeleted.parent.setRight(null);
+                            return true;
+                        }else{
+                            toBeDeleted.parent.setLeft(null);
+                            return true;
+                        }
+                    }else {
+                        toBeDeleted.parent.setLeft(null);
+                        return true;
+                    }
+
+                }
+
+                if (replaceWith1.getVal() == toBeDeleted.getLeft().getVal()) {
+                    replaceWith1.setRight(toBeDeleted.getRight());
+                    replaceWith1.left = null;
+                    replaceWith1.setParent(toBeDeleted.getParent());
+                    if (toBeDeleted.parent.getRight().equals(toBeDeleted)) {
+                        toBeDeleted.parent.setRight(replaceWith1);
+                    } else {
+                        toBeDeleted.parent.setLeft(replaceWith1);
+                    }
+                    toBeDeleted.setLeft(null);
+                    toBeDeleted.setRight(null);
+                    toBeDeleted.setParent(null);
+                } else {
+
+                    if( toBeDeleted != getRoot()) {
+                        if (toBeDeleted.parent.getRight().equals(toBeDeleted)) {
+                            toBeDeleted.parent.setRight(replaceWith1);
+                        } else {
+                            toBeDeleted.parent.setLeft(replaceWith1);
+                        }
+                        replaceWith1.setRight(toBeDeleted.right);
+                        TreeNode p2 = replaceWith1;
+                        if(replaceWith1.getLeft()==null){
+                            replaceWith1.setLeft(toBeDeleted.left);
+                        }else{
+                            while(p2.getLeft()!=null){
+                                p2= p2.getLeft();
+                            }
+                            p2.setLeft(toBeDeleted.left);
+
+                        }
+
+                        replaceWith1.parent.setRight(null);
+                        replaceWith1.setParent(toBeDeleted.parent);
+                    }else{
+                        replaceWith1.setRight(toBeDeleted.right);
+                        TreeNode p2 = replaceWith1;
+                        if(replaceWith1.getLeft()==null){
+                            replaceWith1.setLeft(toBeDeleted.left);
+                        }else{
+                            while(p2.getLeft()!=null){
+                                p2= p2.getLeft();
+                            }
+                            p2.setLeft(toBeDeleted.left);
+
+                        }
+                       // replaceWith1.setLeft(toBeDeleted.left);
+                        replaceWith1.parent.setRight(null);
+                        replaceWith1.setParent(toBeDeleted.parent);
+                        root = replaceWith1;
+
+                    }
+                }
+            }else{
+                replaceWith1 = successor(toBeDeleted);
+
+                if(replaceWith1 != null){
+                    if (replaceWith1.getVal() == toBeDeleted.right.getVal()) {
+                        if (toBeDeleted.parent.getRight().equals(toBeDeleted)) {
+                            toBeDeleted.parent.setRight(replaceWith1);
+                        } else {
+                            toBeDeleted.parent.setLeft(replaceWith1);
+                        }
+                        toBeDeleted.setLeft(null);
+                        toBeDeleted.setRight(null);
+                        toBeDeleted.setParent(null);
+                    } else {
+                        if (toBeDeleted.parent.getRight().equals(toBeDeleted)) {
+                            toBeDeleted.parent.setRight(replaceWith1);
+                        } else {
+                            toBeDeleted.parent.setLeft(replaceWith1);
+                        }
+                        replaceWith1.setRight(toBeDeleted.right);
+                        replaceWith1.setLeft(toBeDeleted.left);
+                        replaceWith1.parent.setLeft(null);
+                        replaceWith1.setParent(toBeDeleted.parent);
+
+                        toBeDeleted.setLeft(null);
+                        toBeDeleted.setRight(null);
+                        toBeDeleted.setParent(null);
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
     public boolean deleteNode(int val){
@@ -288,6 +385,8 @@ public class BinaryTree {
         TreeNode curr = find(new TreeNode(val));
         return height(curr);
     }
+
+    // function to find the height of a tree
 
     public int height( TreeNode node){
         if(node == null){
@@ -304,6 +403,8 @@ public class BinaryTree {
         TreeNode curr = find(new TreeNode(val));
         return depth(curr);
     }
+
+
 
     public int depth(TreeNode node){
         int depthcount=0;
@@ -330,6 +431,48 @@ public class BinaryTree {
     public int diameter(TreeNode node){
         height(node);
         return this.diameter;
+    }
+
+    public void printLeafs(TreeNode node){
+        if(node == null){
+            return;
+        }
+        if(node.left == null && node.right == null){
+            System.out.println(node.getVal());
+        }
+
+        printLeafs(node.left);
+        printLeafs(node.right);
+    }
+
+    public List<List<Integer>> findLeaves(TreeNode root){
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if(root == null){
+            return null;
+        }
+
+        while(root!= null){
+            List<Integer> leaves = new ArrayList<>();
+            root = leafRemoval(root, leaves);
+            result.add(leaves);
+        }
+        System.out.println(result.toString());
+        return result;
+    }
+
+    public TreeNode leafRemoval(TreeNode root, List<Integer> result){
+        if(root == null){
+            return null;
+        }
+
+        if(root.left == null && root.right == null){
+            result.add(root.val);
+            return null;
+        }
+        root.left = leafRemoval(root.left, result);
+        root.right = leafRemoval(root.right, result);
+        return root;
+
     }
 
 
