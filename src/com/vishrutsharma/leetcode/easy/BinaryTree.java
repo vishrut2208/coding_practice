@@ -3,9 +3,7 @@ package com.vishrutsharma.leetcode.easy;
 
 import sun.reflect.generics.tree.Tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTree {
 
@@ -475,11 +473,120 @@ public class BinaryTree {
 
     }
 
+    public List<List<TreeNode>> levelorderTraversal(TreeNode node){
+        List<List<TreeNode>> ans = new ArrayList<>();
+
+        if(root == null){
+            return null;
+        }
+        TreeNode curr = node;
+
+        Queue<TreeNode> level = new LinkedList<>();
+        Queue<TreeNode> parent = new LinkedList<>();
+        parent.add(curr);
+        ArrayList<TreeNode> y = new ArrayList<>();
+        y.add(curr);
+        ans.add(y);
+        while(!parent.isEmpty()){
+            TreeNode temp = parent.remove();
+           if(temp.getLeft()!= null){
+                level.add(temp.getLeft());
+            }
+
+            if(temp.getRight()!= null){
+                level.add(temp.getRight());
+            }
+
+            if(parent.isEmpty() && !level.isEmpty()){
+                ArrayList<Integer> levelans = new ArrayList<>();
+//                while(!level.isEmpty()){
+//                    TreeNode temp2 =  level.poll();
+//                    if(temp2 !=null)
+//                    parent.add(temp2);
+//                    levelans.add(temp2.getVal());
+//                }
+                parent = new LinkedList<>(level);
+                ans.add(new LinkedList<TreeNode>(level));
+                level.clear();
+            }
+
+        }
+        for(List<TreeNode> lev : ans) {
+            for(TreeNode l : lev) {
+                System.out.print(l.getVal() + " ");
+            }
+            System.out.println();
+        }
+        return ans;
+    }
+
+//    public void printPaths(TreeNode node){
+//        if(getRoot() == null){
+//            return;
+//        }
+//
+//        Stack<TreeNode> s = new Stack<>();
+//        TreeNode curr = getRoot();
+//        while(curr != null || s.size()>0){
+//            while(curr != null){
+//                s.push(curr);
+//                //System.out.println(curr.getVal());
+//                curr = curr.getLeft();
+//            }
+//
+//            curr = s.pop();
+//            System.out.println(curr.getVal());
+//            curr = curr.getRight();
+//        }
+//    }
 
 
 
+    public void printPaths(TreeNode root)
+    {
 
+        String path = "";
+        // path.add(root);
+        printPaths(root,path);
+    }
+    public void printPaths(TreeNode root,String path){
+        if(root==null)
+            return;
+        if(root.left==null&&root.right==null){
+            path+=Integer.toString(root.getVal());
+            path+=" ";
+            System.out.print(path+"#");
+        }
 
+        path+=Integer.toString(root.getVal());
+        path+=" ";
+        printPaths(root.left,path);
+        printPaths(root.right,path);
+    }
 
+    public TreeNode lowestCommonA(TreeNode root, int i, int j){
+        if(root == null ) {
+            return null;
+        }
 
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode cur = getRoot();
+        s.push(cur);
+
+        while( cur != null || !s.isEmpty()){
+
+            if(cur.getVal() > i && cur.getVal()> j){
+                cur = cur.getLeft();
+                s.push(cur);
+            }else if(cur.getVal() > i && cur.getVal()> j){
+                cur = cur.getRight();
+                s.push(cur);
+            }else{
+                System.out.println(s.pop().getVal());
+                return s.pop();
+            }
+        }
+
+        return null;
+    }
 }

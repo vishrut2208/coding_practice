@@ -41,7 +41,7 @@ public class Main {
 ////
 //                g.BFS(g,1);
 
-
+//
 //        int[][] l = {{1,1,1,0},{0,0,0,0},{0,0,1,0},{1,0,0,0},{1,1,0,1}};
 //        findIsland i = new findIsland();
 //        i.islands(l);
@@ -54,28 +54,34 @@ public class Main {
 //
 //        s.correctString("iamvishrut");
 
+//////
+//        BinaryTree bt = new BinaryTree();
 //
-        BinaryTree bt = new BinaryTree();
-
-        bt.addNode(20);
-        bt.addNode(10);
-        bt.addNode(30);
-        bt.addNode(5);
-        bt.addNode(7);
-        bt.addNode(6);
-       // bt.addNode(8);
-        bt.addNode(31);
-        bt.addNode(29);
-        bt.addNode(13);
-        //bt.addNode(15);
-        bt.addNode(12);
-        System.out.println("========================inorder=====================");
-        bt.inorderTraversalRecursive(bt.getRoot());
-
-        bt.deleteNode(20);
-
-        System.out.println("========================inorder=====================");
-        bt.inorderTraversalRecursive(bt.getRoot());
+//        bt.addNode(20);
+//        bt.addNode(10);
+//        bt.addNode(30);
+//        bt.addNode(5);
+//        bt.addNode(7);
+//        bt.addNode(6);
+//        bt.addNode(8);
+//        bt.addNode(31);
+//        bt.addNode(29);
+//        bt.addNode(13);
+//        bt.addNode(15);
+//        bt.addNode(12);
+//        System.out.println("========================inorder=====================");
+//        bt.inorderTraversalRecursive(bt.getRoot());
+//
+//        bt.lowestCommonA(bt.getRoot(), 7, 12);
+//        System.out.println("=========================levelOrder=================");
+//        bt.levelorderTraversal(bt.getRoot());
+//        System.out.println("=========================different Paths=================");
+//        bt.printPaths(bt.getRoot());
+////
+//        bt.deleteNode(20);
+//
+//        System.out.println("========================inorder=====================");
+//        bt.inorderTraversalRecursive(bt.getRoot());
 
 
         //bt.printLeafs(bt.getRoot());
@@ -121,6 +127,25 @@ public class Main {
 //        PartitionLabels p = new PartitionLabels();
 //        p.partitionLabels("ababcbacadefegdehijhklij");
 
+
+//        int[][] i = {{2,2}, {1,1}, {0,0}, {2,0}};
+//
+//        Solution y = new Solution();
+//        y.orangesRotting(i);
+
+//        Permutation p = new Permutation();
+//        int[] a = {1,2,3};
+//        p.permute(a);
+//
+//        InsertElement i = new InsertElement();
+//        int[] a = {1,3,5,5,5,7,9};
+//        i.binarySearch(a, 0, a.length-1,6);
+
+        AmazonSubstring s = new AmazonSubstring();
+
+        s.amazonSubstring("abcdbcdbc", 4);
+        s.amazonSubstring("aaabdb", 3);
+        //s.subStringsLessKDist("abcdbcdbc", 4);
 
     }
 }

@@ -14,7 +14,7 @@ public class BullsAndCows {
             table[secret.charAt(c) - '0']++;
 
         }
-        System.out.println(Arrays.toString(table));
+        //System.out.println(Arrays.toString(table));
 
         for (int i = 0; i < secret.length(); i++) {
             if (secret.charAt(i) == guess.charAt(i)) {
