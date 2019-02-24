@@ -18,14 +18,17 @@ public class Main {
 ////
 //        LargestIncreasingSubsequence s = new LargestIncreasingSubsequence();
 //
-//        s.largestIncreasingSubsequence(c);
-//        s.linssBinarySearch(c);
+//       // s.largestIncreasingSubsequence(c);
+//        //s.linssBinarySearch(c);
+//           // s.lengthOfLongestSubstring("abba");
+//        s.simplifyPath("/a//b////c/d//././/..");
 
 //
-//            int[] sum = {8,1,1,14,4,4,2,3,1,9,3,4};
-//
+//            int[] sum = {3, 0, -2, -1, 1, 2};
+////
 //            Target_3_Sum s = new Target_3_Sum();
-//            s.threeSumCount(sum, 10);
+//            s.threeSumCount(sum, 0);
+//            s.threeSum(sum);
 
 //              Graph g = new Graph(9);
 //                g.addEdge(g, 1,3);
@@ -141,11 +144,17 @@ public class Main {
 //        int[] a = {1,3,5,5,5,7,9};
 //        i.binarySearch(a, 0, a.length-1,6);
 
-        AmazonSubstring s = new AmazonSubstring();
-
-        s.amazonSubstring("abcdbcdbc", 4);
-        s.amazonSubstring("aaabdb", 3);
-        //s.subStringsLessKDist("abcdbcdbc", 4);
+//        AmazonSubstring s = new AmazonSubstring();
+//
+//        s.amazonSubstring("abcdbcdbc", 4);
+//        s.amazonSubstring("aaabdb", 3);
+//        //s.subStringsLessKDist("abcdbcdbc", 4);
+        String[] s = {"word", "try","opt", "query"};
+        Trie t = new Trie(s);
+        t.contains("i");
+        t.contains("qord");
+        t.contains("opt");
+        t.contains("query");
 
     }
 }

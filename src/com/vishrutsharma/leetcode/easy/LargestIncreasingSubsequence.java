@@ -1,6 +1,9 @@
 package com.vishrutsharma.leetcode.easy;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.HashMap;
 
 public class LargestIncreasingSubsequence {
 
@@ -46,5 +49,36 @@ public class LargestIncreasingSubsequence {
         System.out.println(len);
         return len;
 
+    }
+
+    public int lengthOfLongestSubstring(String str) {
+
+        // HashSet<Character> s = new HashSet<>();
+        HashMap<Character, Integer> s = new HashMap<>();
+
+        int count = 0, maxcount =0, pointer =0, p=0;
+        for(int i=0; i< str.length(); i++) {
+            if(s.containsKey(str.charAt(i))){
+                p = Math.max(s.get(str.charAt(i)), i);
+            }else{
+                maxcount = Math.max(maxcount, i-p+1);
+                s.put(str.charAt(i), i+1);
+            }
+        }
+        return maxcount;
+    }
+
+    public String simplifyPath(String path) {
+        if(null == path || path.isEmpty()) return "";
+        Deque<String> stack = new ArrayDeque<>();
+        for(String cur : path.split("/")) {
+            if(cur.equals("..")) stack.pop();
+            else if(!cur.equals("") && !cur.equals(".")) stack.push(cur);
+        }
+
+        if(stack.isEmpty()) return "/";
+        StringBuilder sb = new StringBuilder();
+        while(!stack.isEmpty()) sb.append("/").append(stack.pollLast());
+        return sb.toString();
     }
 }
