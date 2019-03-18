@@ -589,4 +589,34 @@ public class BinaryTree {
 
         return null;
     }
+
+    public TreeNode subtreeWithAllDeepest(TreeNode root) {
+        List<TreeNode> t =  new LinkedList<>();
+        int h =dfs(root, t);
+
+        if(t == null){
+            return root;
+        }else{
+            return t.get(t.size()-1);
+        }
+
+    }
+
+
+    public int dfs(TreeNode n, List<TreeNode> t){
+        if(n==null){
+            return 0;
+        }
+
+        int l = dfs(n.left, t);
+        int r = dfs(n.right, t);
+        if(l>r){
+            t.add(0, n.left);
+        }else if(r>l){
+            t.add(0, n.right);
+        }
+
+        return Math.max(l,r) +1;
+
+    }
 }

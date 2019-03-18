@@ -64,16 +64,17 @@ public class Main {
 //        bt.addNode(10);
 //        bt.addNode(30);
 //        bt.addNode(5);
-//        bt.addNode(7);
-//        bt.addNode(6);
 //        bt.addNode(8);
-//        bt.addNode(31);
-//        bt.addNode(29);
-//        bt.addNode(13);
-//        bt.addNode(15);
 //        bt.addNode(12);
+//        bt.addNode(13);
+//        bt.addNode(25);
+//        bt.addNode(27);
+//        bt.subtreeWithAllDeepest(bt.getRoot());
+////        bt.addNode(13);
+////        bt.addNode(15);
+////        bt.addNode(12);
 //        System.out.println("========================inorder=====================");
-//        bt.inorderTraversalRecursive(bt.getRoot());
+//        bt.inorderTraversalRecursive(bt.subtreeWithAllDeepest(bt.getRoot()));
 //
 //        bt.lowestCommonA(bt.getRoot(), 7, 12);
 //        System.out.println("=========================levelOrder=================");
@@ -149,12 +150,69 @@ public class Main {
 //        s.amazonSubstring("abcdbcdbc", 4);
 //        s.amazonSubstring("aaabdb", 3);
 //        //s.subStringsLessKDist("abcdbcdbc", 4);
-        String[] s = {"word", "try","opt", "query"};
-        Trie t = new Trie(s);
-        t.contains("i");
-        t.contains("qord");
-        t.contains("opt");
-        t.contains("query");
+//        String[] s = {"word", "try","opt", "query"};
+//        Trie t = new Trie(s);
+//        t.contains("i");
+//        t.contains("qord");
+//        t.contains("opt");
+//        t.contains("query");
 
+//
+//        Bipartite b = new Bipartite();
+//
+//        int[][] graph = {{1,3},{0,2},{1,3},{0,2}};
+//
+//        b.isBipartite(graph);
+
+//        Reverse r = new Reverse();
+//
+//        r.reverse(123);
+
+//        MemoryManagement m = new MemoryManagement(100);
+//
+//        m.userRequest(10, "U1");
+//        m.userRequest(40, "U2");
+//        m.userRequest(30, "U3");
+//        m.userRequest(20, "U4");
+//        m.print();
+//
+//        m.releaseMemory("U3");
+//        m.print();
+//        m.userRequest(20, "U5");
+//        m.print();
+
+//        LargestIncreasingSubsequence i = new LargestIncreasingSubsequence();
+//
+//        String s = "bbbab";
+//
+//        i.longestPalindromeSubseq(s);
+
+//        AmazonListOfString s = new AmazonListOfString();
+//
+//        s.countkDist("abc", 2);
+
+//        LinkList l = new LinkList();
+//
+//
+//
+//        l.addNode(10);
+//        l.addNode(13);
+//        l.addNode(90);
+//        l.addNode(1);
+//
+//        l.print(l.getRoot());
+
+//        LongestUniqueString i = new LongestUniqueString();
+//        String[] l = {"arm", "cali", "yoyo", "arm", "deli"};
+//        i.longestUniqueString(l,"bacdapqrstuvpmnol");
+
+//        INfixtoPostfix i = new INfixtoPostfix();
+//        i.infixToPostfix("1+2*(3^4-5)^(1+8/8)-9");
+        //a*b^(c^d)-e
+        //a+b*c-d/y^u
+
+        PrintQuestion p = new PrintQuestion();
+
+        p.printQuestion("11[2[a]3[b]]");
     }
 }
