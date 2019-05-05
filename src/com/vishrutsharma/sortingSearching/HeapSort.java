@@ -1,4 +1,4 @@
-package com.vishrutsharma.sorting;
+package com.vishrutsharma.sortingSearching;
 
 public class HeapSort {
 
@@ -51,23 +51,6 @@ public class HeapSort {
         a[j] = temp;
     }
 
-    public void heafpiii( int[] a, int size, int i){
-        int s = i;
-        int l = 2*i +1;
-        int r = 2*i +2;
 
-        if(l< size && a[l] < a[s]){
-            s = l;
-        }
-
-        if(r< size && a[r] < a[s]){
-            s = r;
-        }
-
-        if(s != i){
-            swap(a,i, s);
-            heafpiii(a, size, s);
-        }
-    }
 
 }

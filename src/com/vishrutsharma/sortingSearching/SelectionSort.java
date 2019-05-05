@@ -1,4 +1,4 @@
-package com.vishrutsharma.sorting;
+package com.vishrutsharma.sortingSearching;
 
 public class SelectionSort {
 
@@ -6,12 +6,14 @@ public class SelectionSort {
 
         int minIndex = 0;
 
-        for(int i=0; i< a.length -1 ; i++){
+        for(int i=0; i< a.length ; i++){
+            minIndex = i;
             for(int j = i+1; j< a.length; j++){
-                if(a[i]> a[j]){
-                    swap(a,i, j);
+                if(a[minIndex]> a[j]){
+                    minIndex = j;
                 }
             }
+            swap(a,i,minIndex);
         }
 
         for(int i : a) {

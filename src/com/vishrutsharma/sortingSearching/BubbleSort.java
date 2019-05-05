@@ -1,4 +1,4 @@
-package com.vishrutsharma.sorting;
+package com.vishrutsharma.sortingSearching;
 
 public class BubbleSort {
 

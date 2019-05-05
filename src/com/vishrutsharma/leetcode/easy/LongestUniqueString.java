@@ -45,10 +45,7 @@ public class LongestUniqueString {
                     maxLength = length;
                     start = ptr;
                 }
-//
-//                for(int j=ptr ; j < hl.get(l[i]); j++ ){
-//                    hl.remove(l[j]);
-//                }
+
                 ptr = hl.get(l[i]) +1;
             }else{
                 hl.put(l[i], i);

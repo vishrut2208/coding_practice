@@ -60,24 +60,24 @@ public class Main {
 //////
 //        BinaryTree bt = new BinaryTree();
 //
-//        bt.addNode(20);
-//        bt.addNode(10);
-//        bt.addNode(30);
+//        bt.addNode(4);
+//        bt.addNode(2);
+//        bt.addNode(7);
+//        bt.addNode(1);
+//        bt.addNode(3);
 //        bt.addNode(5);
 //        bt.addNode(8);
-//        bt.addNode(12);
-//        bt.addNode(13);
-//        bt.addNode(25);
-//        bt.addNode(27);
-//        bt.subtreeWithAllDeepest(bt.getRoot());
-////        bt.addNode(13);
-////        bt.addNode(15);
-////        bt.addNode(12);
-//        System.out.println("========================inorder=====================");
-//        bt.inorderTraversalRecursive(bt.subtreeWithAllDeepest(bt.getRoot()));
-//
-//        bt.lowestCommonA(bt.getRoot(), 7, 12);
-//        System.out.println("=========================levelOrder=================");
+//        //bt.addNode(25);
+//        //bt.addNode(27);
+////        bt.subtreeWithAllDeepest(bt.getRoot());
+//////        bt.addNode(13);
+//////        bt.addNode(15);
+//////        bt.addNode(12);
+////        System.out.println("========================inorder=====================");
+////        bt.inorderTraversalRecursive(bt.subtreeWithAllDeepest(bt.getRoot()));
+////
+//        bt.lowestCommonA(bt.getRoot(), 5, 6);
+////        System.out.println("=========================levelOrder=================");
 //        bt.levelorderTraversal(bt.getRoot());
 //        System.out.println("=========================different Paths=================");
 //        bt.printPaths(bt.getRoot());
@@ -211,8 +211,127 @@ public class Main {
         //a*b^(c^d)-e
         //a+b*c-d/y^u
 
-        PrintQuestion p = new PrintQuestion();
+//        PrintQuestion p = new PrintQuestion();
+//
+//        p.printQuestion("11[2[a]3[b]]");
 
-        p.printQuestion("11[2[a]3[b]]");
+//        int[][] g = {{1,3,1}, {1,5,1}, {4,2,1}};
+//
+//        MinPathSum s = new MinPathSum();
+//        s.minpathsum(g);
+
+//        combinations77 c = new combinations77();
+//
+//        c.combine(4,3);
+
+//        LongestSubstring395 l = new LongestSubstring395();
+//
+////        l.longestSubstringAtleastK("baaabcb", 3);
+//
+//        match m = new match();
+//        List<Integer> l = new LinkedList<>();
+//
+//        Scanner n = new Scanner(System.in);
+//        for(int i=0; i<84; i++) {
+//            l.add(n.nextInt());
+//            //System.out.println("nextElement");
+//        }
+//
+//        m.count(l);
+
+//        LinkListPractice l = new LinkListPractice();
+//
+//        l.addNode(1);
+//        l.addNode(2);
+//        l.addNode(3);
+//        l.addNode(4);
+//        l.addNode(5);
+//        l.addNode(6);
+//        l.addNode(7);
+//
+//        //l.printlist(l.getHead());
+//
+//        //l.deleteNode(10);
+//        //l.deleteNode(2);
+//        System.out.println("=======");
+//        l.printlist(l.getHead());
+//
+//        //l.reverseList(l.getHead());
+//        //l.printlist(l.getHead());
+//        System.out.println("=======");
+//        l.printlist(l.reverse(l.getHead()));
+
+//
+//        TuckCapacity t = new TuckCapacity();
+//        int totalCrates = 3, truckCapacity = 1;
+//        List<List<Integer>> allLocations = new LinkedList<>();
+//        List<Integer> coordinates = new LinkedList<>();
+//        coordinates.add(1);
+//        coordinates.add(-3);
+//        allLocations.add(new LinkedList<>(coordinates));
+//
+//        coordinates.clear();
+//        coordinates.add(1);
+//        coordinates.add(2);
+//        allLocations.add(new LinkedList<>(coordinates));
+//
+//        coordinates.clear();
+//        coordinates.add(0, 3);
+//        coordinates.add(1, 4);
+//        allLocations.add(new LinkedList<>(coordinates));
+//        t.closetlocation(totalCrates, allLocations, truckCapacity);
+
+//
+//        leetcodeSumP s = new leetcodeSumP();
+//        int[] a = {30,13,28,32,16,8,11,78,83,5,22,93,61,60,100,8,6,48,87,43,41,86,93,5,19,29,59,31,7,51,99,47,40,24,20,98,41,42,81,92,55,85,51,92,84,21,84,92,1,73,93,51,44,27,23,54,32,57,60,9,69,14,28,86,15,92,47,63,12,99,54,6,16,52,28,86,38,73,16,52,37,30,84,81,46,97,84,17,21,14,52,19,74,20,20,56,89,7,34,21};
+//int[] b = {8,1,5,2,6};
+//
+//        s.maxSum(a);
+
+//        lockproblem f = new lockproblem();
+////
+////        f.countFruits("abbcdabbaab");
+//        f.shortestSubstring("aabcce");
+
+//        ClumsyFactorial f = new ClumsyFactorial();
+////        f.clumsy(12);
+//        int[] w = {1,2,3,4,5,6,7,8,9,10};
+//        f.shipWithinDays(w, 10);
+
+
+//        CommonCharacter c = new CommonCharacter();
+//        String[] A = {"bella", "label", "roller"};
+//        c.commonChars(A);
+//
+//        Logger obj = new Logger();
+////        boolean param_1 = obj.shouldPrintMessage(1,"foo");
+////        boolean param_2 = obj.shouldPrintMessage(2,"bar");
+////        boolean param_3 = obj.shouldPrintMessage(3,"foo");
+////        boolean param_4 = obj.shouldPrintMessage(8,"foo");
+////        boolean param_5 = obj.shouldPrintMessage(10,"foo");
+////        boolean param_6 = obj.shouldPrintMessage(11,"foo");
+//            obj.reverseWords("Let's take LeetCode contest");
+//
+
+//           StringToInt s = new StringToInt();
+//
+//           s.stringToInt("-98088841");
+//
+//           PrimeFactorization p = new PrimeFactorization();
+//
+//           p.primeFactors(12865);
+//
+//           FirstNRChar c = new FirstNRChar();
+//
+//           c.firstNonRepeatingChar("abcgdtopshuabcdg");
+//
+//           CompressString st = new CompressString();
+//
+//           st.compressString("abcdef");
+
+
+        distanceBtwWords d = new distanceBtwWords();
+
+        d.distance("ka ho gaya ka ho gaya  ka", "ka", "gaya");
     }
 }

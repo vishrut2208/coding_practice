@@ -33,9 +33,9 @@ public class Main {
 //                q5.oneEditAway("pale", "ble");
 
 //========================CountCompression===========================================
-//                CountCompression q6 = new CountCompression();
-//                q6.compression("aabbbbooooyyrrshkkee");
-//                q6.compression("qwertyuiop");
+                CountCompression q6 = new CountCompression();
+                q6.compression("aabbbbooooyyrrshkkee");
+                q6.compression("qwertyuiop");
 
 //=============================RotateMatrix=========================================
 //                    int[][] A = {{1,2,3},{4,5,6},{7,8,9}};

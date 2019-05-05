@@ -46,7 +46,7 @@ public class INfixtoPostfix {
         h.put("-", 1);
         h.put("(", 7);
         h.put(")", 7);
-        //a*b^(c^d)-e
+
         Stack<String> so = new Stack<>();
         Stack<String> sop = new Stack<>();
 
